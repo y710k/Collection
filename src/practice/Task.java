@@ -17,9 +17,10 @@ public class Task implements Comparable<Task>{
 		return date +":"+ task;
 	}
 	public int compareTo(Task o) {
-		return this.toString().compareTo(o.toString());
+		return this.date.compareTo(o.date);
 	}
 }
+
 
 
 /*
