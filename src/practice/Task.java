@@ -4,30 +4,21 @@ import java.time.LocalDate;
 
 
 
-public class Task{
-	static String t1 ="牛乳を買う";
-	static String t2 ="○○社面談";
-	static String t3 ="手帳を買う";
-	static String t4 ="散髪に行く";
-	static String t5 ="スクールの課題を解く";
+public class Task implements Comparable<Task>{
+	private LocalDate date;
+	private String task;
 	
-	public static class Day{
-		static LocalDate d1 = LocalDate.of(2021, 10, 21);
-		static LocalDate d2 = LocalDate.of(2021, 9, 15);
-		static LocalDate d3 = LocalDate.of(2021, 12, 4);
-		static LocalDate d4 = LocalDate.of(2021, 8, 10);
-		static LocalDate d5 = LocalDate.of(2021, 11, 9);
-		
-		static String j1 = d1 +":"+ t1;
-		static String j2 = d2 +":"+ t2;
-		static String j3 = d3 +":"+ t3;
-		static String j4 = d4 +":"+ t4;
-		static String j5 = d5 +":"+ t5;
+	public Task(LocalDate date, String task) {
+		this.date = date;
+		this.task = task;
 	}
-	
-	
-
-
+	@Override
+	public String toString() {
+		return date +":"+ task;
+	}
+	public int compareTo(Task o) {
+		return this.toString().compareTo(o.toString());
+	}
 }
 
 
